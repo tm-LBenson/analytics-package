@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "Allows a dev to keep track of their websites analytics and statistics",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "analytics.js",
+    "analytics.min.js",
+    "generateScriptTag.js"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
