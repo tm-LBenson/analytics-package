@@ -1,0 +1,22 @@
+{
+  "name": "analytics-benson",
+  "version": "1.0.0",
+  "description": "Allows a dev to keep track of their websites analytics and statistics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tm-LBenson/analytics-package.git"
+  },
+  "keywords": [
+    "analytics",
+    "statistics",
+    "website",
+    "tracking",
+    "monitoring"
+  ],
+  "author": "Lewis Benson",
+  "license": "MIT"
+}
