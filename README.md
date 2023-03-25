@@ -1,6 +1,7 @@
 # Analytics Benson
 
 Analytics Benson is a lightweight and easy-to-use JavaScript library that allows developers to keep track of their website's analytics and statistics. It supports various web app types, including React, Express, and EJS templates.
+[Visit the tracking site to sign up for free!](https://portfolio-analytics.netlify.app/)
 
 ## Features
 
