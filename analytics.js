@@ -78,4 +78,4 @@ async function analytics(siteName, clientId) {
   }
 }
 
-export default analytics;
+module.exports = analytics;

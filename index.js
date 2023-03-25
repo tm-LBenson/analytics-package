@@ -1,5 +1,4 @@
-// index.js
-import analytics from './analytics';
-import { generateScriptTag } from './generateScriptTag';
+const analytics = require('./analytics');
+const { generateScriptTag } = require('./generateScriptTag');
 
-export { analytics as default, generateScriptTag };
+module.exports = { analytics, generateScriptTag };

@@ -85,7 +85,7 @@ Add the following script tag to your HTML file, replacing 'Your Site Name', 'you
     var clientId = 'your-client-id';
     var script = document.createElement('script');
     script.src =
-      'https://cdn.jsdelivr.net/npm/analytics-benson@1.0.2/analytics.min.js';
+      'https://cdn.jsdelivr.net/npm/analytics-benson@1.0.3/analytics.min.js';
     script.async = true;
     script.onload = function () {
       analytics(siteName, clientId);
