@@ -1,7 +1,10 @@
 // index.js
+// index.js
+import analytics from './analytics';
 
 if (typeof window !== 'undefined') {
-  window.analytics = require('./analytics');
-} else {
-  module.exports = require('./analytics');
+  window.analytics = analytics;
+}
+if (typeof module !== 'undefined') {
+  module.exports = analytics;
 }

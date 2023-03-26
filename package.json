@@ -1,6 +1,6 @@
 {
   "name": "analytics-benson",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Allows a dev to keep track of their websites analytics and statistics",
   "main": "dist/index.js",
   "files": [
