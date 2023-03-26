@@ -80,7 +80,7 @@ If you prefer to use a CDN instead of installing the package, you can use jsDeli
 Add the following script tags to your HTML file, replacing 'yourSiteName' and 'yourClientId' with the appropriate values:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/analytics-benson@1.0.11/analytics.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/analytics-benson@1.0.12/analytics.min.js"></script>
 <script>
   analytics('yourSiteName', 'yourClientId');
 </script>
