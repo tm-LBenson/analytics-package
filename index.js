@@ -1,3 +1,5 @@
+// index.js
+
 const analytics = require('./analytics');
 const { generateScriptTag } = require('./generateScriptTag');
 
