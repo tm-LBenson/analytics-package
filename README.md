@@ -27,7 +27,7 @@ To install the package, run the following command in your project directory:
 1. Import the `analytics` function from the package:
 
 ```js
-import { analytics } from 'analytics-benson';
+import analytics from 'analytics-benson';
 ```
 
 Call the analytics function, passing in your siteName and clientId:
@@ -36,42 +36,7 @@ Call the analytics function, passing in your siteName and clientId:
 analytics('Your Site Name', 'your-client-id');
 ```
 
-Place the function call in a suitable location in your app, such as in the root component or a layout component.
-
-## Express apps with EJS templates
-
-Install the package as mentioned above.
-
-Import the generateScriptTag function from the package:
-
-```js
-const { generateScriptTag } = require('analytics-benson/generateScriptTag');
-```
-
-Generate the script tag and pass it to your EJS template:
-
-```js
-app.get('/', (req, res) => {
-  const scriptTag = generateScriptTag('Your Site Name', 'your-client-id');
-  res.render('index', { scriptTag });
-});
-```
-
-Add the script tag to your EJS template:
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <!-- ... -->
-  </head>
-  <body>
-    <!-- ... -->
-
-    <%- scriptTag %>
-  </body>
-</html>
-```
+Place the function call in a suitable location in your app, such as in the root component or a layout component. In a React app, you can place the function call inside of a useEffect hook to ensure the function fires on page load.
 
 ## CDN
 
@@ -80,7 +45,7 @@ If you prefer to use a CDN instead of installing the package, you can use jsDeli
 Add the following script tags to your HTML file, replacing 'yourSiteName' and 'yourClientId' with the appropriate values:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/analytics-benson@1.0.24/analytics.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/analytics-benson@1.1.0/analytics.min.js"></script>
 <script>
   analytics('yourSiteName', 'yourClientId');
 </script>

@@ -53,7 +53,7 @@ async function analytics(siteName, clientId) {
       deviceType: getDeviceType(),
       ipAddress,
     };
-    console.log(data);
+
     const response = await fetch(
       'https://astro-server-z1u9.onrender.com/traffic-data',
       {
