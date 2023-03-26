@@ -26,7 +26,7 @@ To install the package, run the following command in your project directory:
 1. Import the `analytics` function from the package:
 
 ```js
-import analytics from 'analytics-benson';
+import { analytics } from 'analytics-benson';
 ```
 
 Call the analytics function, passing in your siteName and clientId:
@@ -76,22 +76,12 @@ Add the script tag to your EJS template:
 
 If you prefer to use a CDN instead of installing the package, you can use jsDelivr:
 
-Add the following script tag to your HTML file, replacing 'Your Site Name', 'your-client-id', and 'your-package-version' with the appropriate values:
+Add the following script tags to your HTML file, replacing 'yourSiteName' and 'yourClientId' with the appropriate values:
 
 ```html
+<script src="https://cdn.jsdelivr.net/npm/analytics-benson@1.0.7/analytics.min.js"></script>
 <script>
-  (function () {
-    var siteName = 'Your Site Name';
-    var clientId = 'your-client-id';
-    var script = document.createElement('script');
-    script.src =
-      'https://cdn.jsdelivr.net/npm/analytics-benson@1.0.6/analytics.min.js';
-    script.async = true;
-    script.onload = function () {
-      analytics(siteName, clientId);
-    };
-    document.body.appendChild(script);
-  })();
+  analytics('yourSiteName', 'yourClientId');
 </script>
 ```
 
