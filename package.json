@@ -1,19 +1,29 @@
 {
   "name": "analytics-benson",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Allows a dev to keep track of their websites analytics and statistics",
-  "main": "index.js",
-  "exports": {
-    "require": "./index.js",
-    "import": "./index.esm.js"
-  },
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "files": [
     "index.js",
     "analytics.js",
-    "analytics.min.js",
-    "index.esm.js"
+    "analytics.min.js"
   ],
   "type": "module",
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "esmodules": true
+        }
+      }
+    ]
+  ],
+  "scripts": {
+    "build": "babel index.js --out-file dist/index.js && babel index.js --out-file dist/index.esm.js --env-name=esm",
+    "prepublishOnly": "npm run build"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/tm-LBenson/analytics-package.git"
@@ -26,5 +36,10 @@
     "monitoring"
   ],
   "author": "Lewis Benson",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2"
+  }
 }
