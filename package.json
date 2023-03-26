@@ -1,6 +1,6 @@
 {
   "name": "analytics-benson",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "Allows a dev to keep track of their websites analytics and statistics",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -25,7 +25,7 @@
     "transform-modules-commonjs"
   ],
   "scripts": {
-    "build": "babel index.js --out-file dist/index.js && babel index.js --out-file dist/index.esm.js --env-name esm",
+    "build": "babel index.js --out-file dist/index.js && babel index.js --out-file dist/index.esm.js --env-name esm && cp index.esm.js dist/",
     "prepublishOnly": "npm run build"
   },
   "repository": {
