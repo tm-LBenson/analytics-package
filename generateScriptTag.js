@@ -7,7 +7,7 @@ function generateScriptTag(siteName, clientId) {
         var siteName = '${siteName}';
         var clientId = '${clientId}';
         var script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/analytics-benson@1.0.10/analytics.min.js';
+        script.src = 'https://cdn.jsdelivr.net/npm/analytics-benson@1.0.11/analytics.min.js';
         script.async = true;
         script.onload = function() {
           analytics(siteName, clientId);
