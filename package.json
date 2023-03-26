@@ -2,15 +2,25 @@
   "name": "analytics-benson",
   "version": "1.0.10",
   "description": "Allows a dev to keep track of their websites analytics and statistics",
-  "main": "index.js",
+  "main": "dist/index.js",
   "files": [
     "index.js",
     "analytics.js",
     "analytics.min.js",
     "generateScriptTag.js"
   ],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "esmodules": true
+        }
+      }
+    ]
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel index.js --out-file dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +34,10 @@
     "monitoring"
   ],
   "author": "Lewis Benson",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2"
+  }
 }
