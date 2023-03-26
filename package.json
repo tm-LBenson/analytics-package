@@ -1,13 +1,14 @@
 {
   "name": "analytics-benson",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "Allows a dev to keep track of their websites analytics and statistics",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "files": [
     "index.js",
     "analytics.js",
-    "analytics.min.js"
+    "analytics.min.js",
+    "index.esm.js"
   ],
   "type": "module",
   "presets": [
