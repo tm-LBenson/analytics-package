@@ -78,4 +78,8 @@ async function analytics(siteName, clientId) {
   }
 }
 
-module.exports = analytics;
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = analytics;
+} else if (typeof window !== 'undefined') {
+  window.analytics = analytics;
+}

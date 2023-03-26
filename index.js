@@ -9,3 +9,4 @@ if (typeof window !== 'undefined') {
 } else {
   module.exports = { analytics, generateScriptTag };
 }
+
