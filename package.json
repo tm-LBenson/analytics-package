@@ -1,13 +1,12 @@
 {
   "name": "analytics-benson",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Allows a dev to keep track of their websites analytics and statistics",
   "main": "dist/index.js",
   "files": [
     "index.js",
     "analytics.js",
-    "analytics.min.js",
-    "generateScriptTag.js"
+    "analytics.min.js"
   ],
   "presets": [
     [
