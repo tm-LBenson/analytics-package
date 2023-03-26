@@ -1,12 +1,17 @@
 {
   "name": "analytics-benson",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "Allows a dev to keep track of their websites analytics and statistics",
   "main": "index.js",
+  "exports": {
+    "require": "./index.js",
+    "import": "./index.esm.js"
+  },
   "files": [
     "index.js",
     "analytics.js",
-    "analytics.min.js"
+    "analytics.min.js",
+    "index.esm.js"
   ],
   "type": "module",
   "repository": {
@@ -22,5 +27,4 @@
   ],
   "author": "Lewis Benson",
   "license": "MIT"
-
 }
