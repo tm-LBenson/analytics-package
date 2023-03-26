@@ -1,9 +1,9 @@
 {
   "name": "analytics-benson",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "Allows a dev to keep track of their websites analytics and statistics",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "module": "index.esm.js",
   "files": [
     "index.js",
     "analytics.js",
