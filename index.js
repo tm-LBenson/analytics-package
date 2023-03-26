@@ -1,12 +1,9 @@
 // index.js
 
-const analytics = require('./analytics');
-const { generateScriptTag } = require('./generateScriptTag');
-
 if (typeof window !== 'undefined') {
-  window.analytics = analytics;
-  window.generateScriptTag = generateScriptTag;
+  window.analytics = require('./analytics');
+  window.generateScriptTag = require('./generateScriptTag');
 } else {
-  module.exports = { analytics, generateScriptTag };
+  module.exports = require('./analytics');
+  module.exports = require('./generateScriptTag');
 }
-

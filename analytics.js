@@ -1,4 +1,4 @@
-// index.js
+// analytics.js
 
 //How often send data per IP
 const ONE_HOUR = 60 * 60 * 1000; // 1 hour in milliseconds
@@ -53,7 +53,7 @@ async function analytics(siteName, clientId) {
       deviceType: getDeviceType(),
       ipAddress,
     };
-
+    console.log(data);
     const response = await fetch(
       'https://astro-server-z1u9.onrender.com/traffic-data',
       {
@@ -78,8 +78,11 @@ async function analytics(siteName, clientId) {
   }
 }
 
-if (typeof module !== 'undefined' && module.exports) {
+if (typeof module !== 'undefined') {
+  console.log('module');
   module.exports = analytics;
-} else if (typeof window !== 'undefined') {
+}
+if (typeof window !== 'undefined') {
+  console.log('window');
   window.analytics = analytics;
 }
