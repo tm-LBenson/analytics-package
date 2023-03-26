@@ -1,4 +1,9 @@
 const analytics = require('./analytics');
 const { generateScriptTag } = require('./generateScriptTag');
 
-module.exports = { analytics, generateScriptTag };
+if (typeof window !== 'undefined') {
+  window.analytics = analytics;
+  window.generateScriptTag = generateScriptTag;
+} else {
+  module.exports = { analytics, generateScriptTag };
+}
