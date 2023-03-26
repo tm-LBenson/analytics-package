@@ -1,0 +1,28 @@
+# Directories
+node_modules/
+coverage/
+__tests__/
+test/
+tests/
+*.test.js
+*.spec.js
+
+# Build
+dist/
+
+# Config files
+.editorconfig
+.env
+.eslintrc
+.prettierrc
+.babelrc
+
+# Log files
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini

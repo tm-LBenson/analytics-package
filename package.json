@@ -20,7 +20,8 @@
     ]
   ],
   "scripts": {
-    "build": "babel index.js --out-file dist/index.js"
+    "build": "babel index.js --out-file dist/index.js",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
