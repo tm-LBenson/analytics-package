@@ -1,11 +1,10 @@
 // index.js
 
-import analytics from './analytics';
+const analytics = require('./analytics');
 
 if (typeof window !== 'undefined') {
   window.analytics = analytics;
 }
-if (typeof module !== 'undefined') {
+if (module) {
   module.exports = analytics;
-  
 }

@@ -79,10 +79,8 @@ async function analytics(siteName, clientId) {
 }
 
 if (typeof module !== 'undefined') {
-  console.log('module', analytics);
-  module.exports = { analytics };
+  module.exports = analytics;
 }
 if (typeof window !== 'undefined') {
-  console.log('window');
   window.analytics = analytics;
 }
