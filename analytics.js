@@ -2,7 +2,7 @@
 
 // How often send data per IP
 const ONE_HOUR = 60 * 60 * 1000; // 1 hour in milliseconds
-
+const SERVER = 'https://astro-server-z1u9.onrender.com/traffic-data';
 const checkLastSent = () => {
   const lastSent = localStorage.getItem('lastSent');
   if (!lastSent) {
@@ -38,7 +38,7 @@ const getIpAddress = async () =>
 
 // Display Consent Banner
 
-const displayConsentBanner = (onAccept) => {
+const displayConsentBanner = (onAccept, siteName, clientId) => {
   if (document.getElementById('consent-accept')) {
     return;
   }
@@ -66,10 +66,36 @@ const displayConsentBanner = (onAccept) => {
     setTimeout(() => onAccept(), 0);
   });
 
-  banner.querySelector('#consent-decline').addEventListener('click', () => {
-    localStorage.setItem('analytics-consent', 'declined');
-    banner.remove();
-  });
+  banner
+    .querySelector('#consent-decline')
+    .addEventListener('click', async () => {
+      localStorage.setItem('analytics-consent', 'declined');
+      banner.remove();
+
+      const data = {
+        siteName,
+        date: new Date().toISOString(),
+        noConsent: true,
+      };
+
+      try {
+        const response = await fetch(SERVER, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Client-ID': clientId,
+          },
+          body: JSON.stringify(data),
+        });
+        if (!response.ok) {
+          throw new Error(
+            `Error sending data to the server: ${response.statusText}`,
+          );
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    });
 };
 
 const checkConsent = (justAccepted = false) => {
@@ -103,7 +129,11 @@ async function analytics(siteName, clientId) {
     }
 
     if (!checkConsent()) {
-      displayConsentBanner(() => analytics(siteName, clientId));
+      displayConsentBanner(
+        () => analytics(siteName, clientId),
+        siteName,
+        clientId,
+      );
       return;
     }
 
@@ -121,18 +151,15 @@ async function analytics(siteName, clientId) {
       location,
     };
 
-    const response = await fetch(
-      'https://astro-server-z1u9.onrender.com/traffic-data',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Client-ID': clientId,
-        },
-        body: JSON.stringify(data),
+    const response = await fetch(SERVER, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Client-ID': clientId,
       },
-    );
-    console.log(response);
+      body: JSON.stringify(data),
+    });
+
     if (!response.ok) {
       throw new Error(
         `Error sending data to the server: ${response.statusText}`,
