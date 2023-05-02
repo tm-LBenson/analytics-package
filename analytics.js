@@ -76,7 +76,6 @@ const checkConsent = (justAccepted = false) => {
 };
 
 async function analytics(siteName, clientId) {
-  console.log(siteName + ' analytics', clientId);
   try {
     if (!checkLastSent()) {
       return;
@@ -113,7 +112,6 @@ async function analytics(siteName, clientId) {
     );
     console.log(response);
     if (!response.ok) {
-      console.log('Error sending data to the server: ' + response.statusText); // '
       throw new Error(
         `Error sending data to the server: ${response.statusText}`,
       );
