@@ -110,11 +110,12 @@ const getLocationData = async (ipAddress) => {
     const response = await fetch(`https://ipapi.co/${ipAddress}/json/`);
     const data = await response.json();
 
-    // You can return the whole data object or only the parts you need
     return {
       country: data.country_name,
       region: data.region,
       city: data.city,
+      latitude: data.latitude,
+      longitude: data.longitude,
     };
   } catch (error) {
     console.error('Error getting location data: ', error);
